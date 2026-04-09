@@ -1,0 +1,298 @@
+/* כללי - עיצוב בסיסי */
+body,
+html {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* מרכז את התוכן אנכית */
+  align-items: center;     /* מרכז את התוכן אופקית */
+  direction: rtl;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(to bottom right, #e8f5e9, #fce4ec);
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+/* קנבס המשחק */
+canvas {
+  width: 80vw;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  border: 5px solid rgb(157, 221, 188);
+  box-shadow: 0 4px 12px rgba(198, 234, 212, 0.3);
+  background-color: #ffffff;
+  margin: 10px 0;
+}
+
+/* כותרות */
+h2 {
+  margin-top: 10px;
+  color: #2e7d32;
+  font-weight: 700;
+  font-size: 2em;
+  user-select: none; /* מונע סימון בטעות */
+}
+
+h3 {
+  color: rgb(105, 165, 134);
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+/* תצוגת הניקוד */
+#scoreBoard {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #2e7d32;
+  text-align: start;
+  width: 80vw;
+  max-width: 600px;
+  user-select: none;
+  font-weight: 600;
+}
+
+/* עיצוב טופס הכניסה */
+form {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 19px 19px rgba(79, 126, 109, 0.1);
+  text-align: center;
+  min-width: 280px;
+  width: 90vw;
+  max-width: 350px;
+  box-sizing: border-box;
+}
+
+/* כותרת הטופס */
+form h3 {
+  color: #2e7d32;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  user-select: none;
+}
+
+/* שדות הקלט */
+input[type="text"] {
+  padding: 10px;
+  width: 100%;
+  border: 1.5px solid #a5d6a7;
+  border-radius: 15px;
+  outline: none;
+  font-size: 20px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+  border-color: #66bb6a;
+  box-shadow: 0 0 5px #66bb6a;
+}
+
+/* כפתור */
+button {
+  background-color: #ef5350;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+button:hover {
+  background-color: #c62828;
+  box-shadow: 0 4px 8px rgba(198, 60, 60, 0.5);
+}
+
+
+/* עיצוב טבלה שיאים */
+table {
+  width: 80vw;
+  max-width: 600px;
+  margin: 20px 0;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 6px 15px rgba(79, 126, 109, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 1.1em;
+  direction: rtl;
+}
+
+thead {
+  background-color: #a5d6a7;
+  color: #1b5e20;
+}
+
+thead th {
+  padding: 15px 20px;
+  font-weight: 700;
+  text-align: center;
+  user-select: none;
+}
+
+tbody td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #c8e6c9;
+  text-align: center;
+  color: #2e7d32;
+  user-select: none;
+}
+
+tbody tr:hover {
+  background-color: #dcedc8;
+  cursor: default;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* הודעת מנצח כללי */
+#winner {
+  margin-top: 30px;
+  padding: 18px 12px;
+  background: linear-gradient(to right, #94e998, #fcb2a7);
+  color: #ffffff;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: 3px solid #2e7d32;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(192, 15, 15, 0.25);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  transition: all 0.3s ease;
+  animation: fadeInWinner 1.2s ease-out;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+/* אנימציית הופעה */
+@keyframes fadeInWinner {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* הגבלת רוחב העמודה של כפתור המחיקה */
+table td:nth-child(3) {
+  width: 60px;      /* רוחב קבוע לצמצום */
+  text-align: center; /* מרכז את הכפתור בעמודה */
+  padding: 5px 8px;  /* ריווח פנימי מותאם */
+}
+
+/* סיידבר צר מימין */
+#sidebar {
+  width: 160px;
+  background-color: #a5d6a7;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 20px 10px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  position: fixed; /* כדי שהסיידבר יישאר במקום גם בגלילה */
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* עיצוב כפתורים בסיידבר */
+#sidebar button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 5px;
+  border: none;
+  border-radius: 8px;
+  background-color: #66bb6a;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#sidebar button:hover {
+  background-color: #4caf50;
+}
+
+/* התאמה של התוכן המרכזי, להימנע מהסתירה עם הסיידבר */
+#mainContent {
+  margin-right: 140px; /* כדי לפנות מקום לסיידבר */
+}
+/* עיצוב מיוחד לכפתור מחיקה בטבלה */
+.delete-btn {
+  background-color: #e57373; /* אדום בהיר */
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c62828;
+}
+
+/* תיבת מנצח בסיידבר */
+#winner {
+  margin-top: 20px;
+  background-color: #ffffff;
+  border: 2px solid #2e7d32;
+  border-radius: 10px;
+  padding: 10px;
+  color: #2e7d32;
+  font-weight: bold;
+  font-size: 0.95em;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.2);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* רספונסיביות לטלפונים קטנים */
+@media (max-width: 400px) {
+  form {
+    width: 90%;
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  #scoreBoard {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  table {
+    font-size: 1em;
+  }
+
+  thead th,
+  tbody td {
+    padding: 12px 10px;
+  }
+
+  
+
+}

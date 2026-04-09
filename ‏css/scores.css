@@ -1,0 +1,227 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #e8f5e9, #fce4ec);
+    box-sizing: border-box;
+}
+
+
+h2 {
+    font-size:30px;
+    text-align: center;
+    margin-top: 15px;
+    color: #2e7d32;
+    font-weight:bolder;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 6px 15px rgba(79, 126, 109, 0.1);
+    border-radius: 10px;
+    font-size: 1.1em;
+    word-wrap: break-word;
+    table-layout: fixed;
+}
+
+
+thead {
+    background-color: #a5d6a7;
+    color: #1b5e20;
+}
+
+thead th {
+    padding: 15px 20px;
+    font-weight: 700;
+    text-align: center;
+    user-select: none;
+}
+
+tbody td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #c8e6c9;
+    text-align: center;
+    color: #2e7d32;
+    user-select: none;
+}
+
+tbody tr:hover {
+    background-color: #dcedc8;
+    cursor: default;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+table td:nth-child(3) {
+    width: 60px;
+    text-align: center;
+    padding: 5px 8px;
+}
+
+.delete-btn {
+    background-color: #e57373;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c62828;
+}
+
+#sidebar {
+    width: 220px;
+    background: linear-gradient(to bottom, #a5d6a7, #81c784);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 15px;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    gap: 20px;
+}
+
+
+#sidebar button {
+    width: 90%;
+    padding: 14px 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 25px;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#sidebar button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+#mainContent {
+    margin-right: 240px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+#winner {
+    margin-top: 20px;
+    background: linear-gradient(to right, #66bb6a, #f8104a);
+    /* רקע חי ומבריק */
+    color: #ffffff;
+    border: 3px solid #1b5e20;
+    border-radius: 20px;
+    padding: 18px 16px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.5), 0 0 10px rgba(76, 175, 80, 0.4);
+    max-width: 100%;
+    animation: popWinner 1.5s ease-out, pulseGlow 2s infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes popWinner {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 15px rgba(255, 64, 129, 0.6), 0 0 8px rgba(76, 175, 80, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(255, 64, 129, 0.8), 0 0 15px rgba(76, 175, 80, 0.8);
+    }
+}
+@media (max-width: 1200px) {
+    html, body {
+        font-size: 20px;
+    }
+    #sidebar {
+        width: 220px;
+    }
+}
+@media (max-width: 768px) {
+    html, body {
+        font-size: 15px;
+    }
+
+    #sidebar {
+        width: 180px;
+    }
+
+    #mainContent {
+        margin-right: 190px;
+    }
+
+    table {
+        font-size: 0.95em;
+    }
+
+    thead th, tbody td {
+        padding: 10px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    html, body {
+        font-size: 14px;
+    }
+
+    #sidebar {
+        width: 160px;
+        padding: 10px 5px;
+    }
+
+    #mainContent {
+        margin-right: 170px;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+    h2 {
+    display: none;
+    
+}
+
+}
+
