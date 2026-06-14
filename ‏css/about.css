@@ -1,0 +1,82 @@
+body,
+html {
+  margin: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  direction: ltr;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #e8f5e9, #fce4ec);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.about-box {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 19px 19px rgba(79, 126, 109, 0.1);
+  width: 90vw;
+  max-width: 650px;
+  box-sizing: border-box;
+}
+
+.about-box h1 {
+  color: #2e7d32;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.about-box p {
+  color: #2e7d32;
+  line-height: 1.7;
+  text-align: start;
+  margin-bottom: 30px;
+}
+
+.about-img,
+#galleryImg {
+  width: min(180px, 70vw);
+  height: auto;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  border: 3px solid #a5d6a7;
+}
+
+.about-box button {
+  background-color: #ef5350;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 20px;
+  margin: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.about-box button:hover {
+  background-color: #c62828;
+}
+
+.about-box a {
+  display: inline-block;
+  background-color: #66bb6a;
+  color: white;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-box a:hover {
+  background-color: #4caf50;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.5);
+}
+
+@media (max-width: 480px) {
+  .about-box { padding: 25px 16px; }
+  .about-box a,
+  .about-box button { width: 100%; box-sizing: border-box; margin: 6px 0; }
+}

@@ -4,27 +4,26 @@
 // ╚══════════════════════╝
 
 //הגדרות לפי רמות קושי שונות
-const difficulty = localStorage.getItem("snakeDifficulty") || "medium";
-let speed;
-let appleCount = 1; // ברירת מחדל
+const difficulty = sessionStorage.getItem("snakeDifficulty") || "medium";let speed;
+let appleCount = 1;
 
 switch (difficulty) {
-    //רמת קושי -קל 
+
     case "easy":
-        speed = 250; // איטי
+        speed = 250; 
         appleCount = 1;
         break;
-    //רמת קושי -בינוני 
+
     case "medium":
-        speed = 180; // ברירת מחדל
+        speed = 180;
         appleCount = 2;
         break;
-    //רמת קושי -קשה 
+
     case "hard":
-        speed = 90; // מהיר
+        speed = 90; 
         appleCount = 5;
         break;
-    //ברירת מחדל
+
     default:
         speed = 180;
 }
@@ -33,9 +32,7 @@ switch (difficulty) {
 // ║         DOM וקנבס         ║
 // ╚════════════════════════════╝
 
-//שמירת שם משתמש  
-const username = localStorage.getItem("snakeUsername") || "אורח";
-// הצגת שם משתמש ורמת קושי
+const username = sessionStorage.getItem("snakeUsername") || "Guest";
 //document.getElementById("welcome").textContent = `hello ${username} | Difficulty level: ${difficulty}`;
 
 document.getElementById("usernameDisplay").innerText = `welcome ${username} 
@@ -47,8 +44,8 @@ const context = canvas.getContext("2d");
 
 // הגדרות בסיסיות למשחק
 let boxSize;
-let gridWidth;  // כמה תאים לרוחב
-let gridHeight; // כמה תאים לגובה
+let gridWidth;
+let gridHeight;
 
 const screenWidth = window.innerWidth;
 
@@ -67,7 +64,7 @@ if (screenWidth >= 1800) {
     gridHeight = 24;   // 480px
 }
 
-// קביעת הגודל האמיתי של הקנבס
+// קביעת גודל הקנבס
 canvas.width = gridWidth * boxSize;
 canvas.height = gridHeight * boxSize;
 
@@ -90,7 +87,7 @@ wallImg.src = "../images/wall.png";
 // ║    מצב ראשוני של המשחק    ║
 // ╚════════════════════════════╝
 
-// מיקום התחלה מדויק באמצע הלוח
+// מיקום התחלה באמצע הלוח
 let startX = Math.floor(canvas.width / (2 * boxSize)) * boxSize;
 let startY = Math.floor(canvas.height / (2 * boxSize)) * boxSize;
 
@@ -114,9 +111,9 @@ for (let i = 0; i < appleCount; i++) {
     foods.push(generateFood());
 }
 
-//משתנה לשמירת ניקוד
+//ניקוד
 let score = 0;
-//משתנה לשמירת שיא אחרון
+//שיא אחרון
 let highScore = parseInt(localStorage.getItem(`snakeHighScore_${username}`)) || 0;
 
 
@@ -179,7 +176,7 @@ function draw() {
 
     // ציור ראש הנחש - מוגדל ומרוכז
     context.drawImage(headImg, snake[0].x - elementOffset, snake[0].y - elementOffset, elementSize, elementSize);
-    
+
     // ציור גוף הנחש כעיגולים
     context.fillStyle = "green";
     for (let i = 1; i < snake.length; i++) {
@@ -214,7 +211,7 @@ function update() {
     else if (direction === "RIGHT") head.x += boxSize;
 
 
-    // בדיקת הפסד – פגיעה בקיר
+    // בדיקת הפסד - פגיעה בקיר
     let gameOver = false;
 
     if (head.x < 0 || head.x >= canvas.width ||
@@ -228,7 +225,7 @@ function update() {
             break;
         }
     }
-    // בדיקת הפסד – פגיעה בעצמו
+    // בדיקת הפסד - פגיעה בעצמו
     for (let i = 0; i < snake.length; i++) {
         if (head.x === snake[i].x && head.y === snake[i].y) {
             gameOver = true;
@@ -317,7 +314,7 @@ window.addEventListener("keydown", (e) => {
         if (speed !== fastSpeed) {
             speed = fastSpeed;
             // הוספת קלאס למהירות גבוהה
-            canvas.classList.add("fast-speed");  
+            canvas.classList.add("fast-speed");
             startGameLoop();
         }
     }
@@ -353,6 +350,3 @@ function handleKeyDown(event) {
             break;
     }
 }
-
-
-

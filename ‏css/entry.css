@@ -5,7 +5,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  direction: rtl;
+  direction: ltr;
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom right, #e8f5e9, #fce4ec);
   text-align: center;

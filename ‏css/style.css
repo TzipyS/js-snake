@@ -123,7 +123,7 @@ table {
   border-radius: 10px;
   overflow: hidden;
   font-size: 1.1em;
-  direction: rtl;
+  direction: ltr;
 }
 
 thead {

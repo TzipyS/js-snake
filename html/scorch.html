@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="he">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Highscore table</title>
+  <link rel="stylesheet" href="../‏css/nav.css" />
   <link rel="stylesheet" href="../‏css/scores.css" />
 </head>
-
 <body>
+  <header class="site-header">
+    <span class="site-logo">Snake Game</span>
+    <input type="checkbox" id="navToggle" class="nav-toggle">
+    <label for="navToggle" class="nav-burger">&#9776;</label>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="scorch.html">Scores</a>
+    </nav>
+  </header>
+
   <h2>Highscore table</h2>
 
   <div id="mainContent">
@@ -20,13 +31,9 @@
           <th>actions</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- שורות יתווספו כאן דינמית -->
-      </tbody>
+      <tbody></tbody>
     </table>
   </div>
-
-  
 
   <div id="sidebar">
     <button id="playAgainBtn">play again</button>
@@ -36,6 +43,4 @@
 
   <script src="../js/scorch.js" type="text/javascript"></script>
 </body>
-
-
 </html>

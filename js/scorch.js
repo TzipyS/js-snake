@@ -14,7 +14,7 @@ function loadScoreTable() {
     tbody.innerHTML = ""; 
 
     // טוען את רשימת המשתמשים ששיחקו מה-localStorage
-    // אם לא קיימת רשימה – נשתמש במערך ריק
+    // אם לא קיימת רשימה - נשתמש במערך ריק
     const users = JSON.parse(localStorage.getItem("snakeUsers")) || [];
     
     // משתנים זמניים לאיתור המנצח
@@ -46,7 +46,7 @@ userScores.sort((a, b) => b.score - a.score);
         // מוסיף את השורה לגוף הטבלה (tbody)
         tbody.appendChild(tr);
 
-        // בדיקה אם יש ניקוד גבוה יותר – עדכון המנצח
+        // בדיקה אם יש ניקוד גבוה יותר - עדכון המנצח
         if (userObj.score > maxScore) {
             maxScore = userObj.score;
             winner = userObj.name;
@@ -71,7 +71,7 @@ userScores.sort((a, b) => b.score - a.score);
 }
 
 function deleteUser(username) {
-    // תיבת אישור – שואל את המשתמש אם הוא בטוח שמחק את השחקן הזה
+    // תיבת אישור - שואל את המשתמש אם הוא בטוח שמחק את השחקן הזה
     if (!confirm(`Are you sure you want to delete user "${username}"? This action cannot be undone.`)) {
         return; // המשתמש ביטל את המחיקה
     }
@@ -92,7 +92,7 @@ function deleteUser(username) {
 
 //פונקציה של לחצן שחק שוב 
 document.getElementById("playAgainBtn").addEventListener("click", () => {
-    const username = localStorage.getItem("snakeUsername");
+    const username = sessionStorage.getItem("snakeUsername");
     if (username) {
         window.location.href = "game.html";  // מתחיל משחק חדש עם השם הנוכחי
     } else {
@@ -103,7 +103,6 @@ document.getElementById("playAgainBtn").addEventListener("click", () => {
 document.getElementById("changeUserBtn").addEventListener("click", () => {
     window.location.href = "../index.html";
 });
-
 
 
 
